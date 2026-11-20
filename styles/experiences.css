@@ -78,3 +78,26 @@ body.dark .ex-task-banner{background:linear-gradient(120deg,#464c83,#7b619a)}
 @media(max-width:730px){.window{animation:none}.ex-store-head{padding:25px 20px 13px;align-items:flex-start;flex-direction:column;gap:16px}.ex-store-head h1{font-size:37px}.ex-store-search{width:100%}.ex-feature-row{grid-template-columns:1fr;padding:10px 18px}.ex-feature-card{min-height:180px}.ex-categories{padding:10px 18px 4px}.ex-shell:has(.ex-store-head)>.ex-section-heading,.ex-shell:has(.ex-store-head)>.ex-app-grid{margin-left:18px;margin-right:18px}.ex-app-grid{grid-template-columns:1fr}.ex-inset{padding:24px 18px 40px}.ex-journal{grid-template-columns:120px 1fr}.ex-journal aside{padding:14px 9px}.ex-journal main{padding:22px 14px}.ex-journal main h1{font-size:35px}.ex-atlas{grid-template-columns:125px 1fr}.ex-atlas aside{padding:15px 6px}.ex-atlas aside .ex-heading h1{font-size:27px}.ex-atlas .ex-map-toolbar{padding:10px;flex-wrap:wrap}.ex-atlas .ex-map-frame{min-height:220px;margin:0 8px}.ex-code-split{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.ex-code-split section:first-child{border-right:0;border-bottom:1px solid #e4e7ee}.ex-code-head span{display:none}.ex-code-head{padding:8px}.ex-code-head .ex-btn{padding:7px}.ex-pixel-shell{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.ex-pixel-sidebar{padding:12px 17px;max-height:240px}.ex-pixel-sidebar .ex-heading{margin-bottom:4px}.ex-pixel-sidebar .ex-heading h1{font-size:25px}.ex-color-palette{max-width:280px;margin:8px 0}.ex-pixel-stage{padding:10px}.ex-snake-screen{grid-template-columns:1fr;overflow:auto;padding:16px;align-content:start}.ex-snake-side h1{font-size:35px}.ex-snake-side .ex-score-boxes{margin:7px 0}.ex-snake-side .ex-btn{max-width:180px}.ex-memory-grid{gap:6px}.ex-memory-card{font-size:26px}.ex-recipe-detail{grid-template-columns:1fr}.ex-recipe-large{height:90px;font-size:60px}.ex-discover-grid{grid-template-columns:1fr 1fr}.ex-synth-toolbar label{margin-left:0}.ex-sequencer{min-width:530px}.ex-game-screen{padding:18px}.ex-2048-board{gap:6px;padding:8px}.ex-game-header h1{font-size:44px}.ex-score-boxes>div{min-width:56px;padding:8px}.ex-score-boxes strong{font-size:17px}.ex-typing-stats{gap:4px}.ex-typing-stats>div{padding:9px 4px}.ex-typing-stats strong{font-size:19px}}
 @media(max-width:430px){.ex-discover-grid{grid-template-columns:1fr}.ex-arcade-hero h1{font-size:40px}.ex-arcade-orbs{opacity:.3}.ex-feature-card h2{font-size:27px}.ex-launch-grid{grid-template-columns:repeat(3,1fr);gap:12px}.ex-launch-app .ex-app-icon{width:58px;height:58px}.ex-journal{grid-template-columns:94px 1fr}.ex-focus-clock{letter-spacing:-3px}.ex-typing-prompt{font-size:14px;padding:17px}}
 @media(prefers-reduced-motion:reduce){.ex-app-icon,.ex-arcade-orbs,.window{animation:none!important;transition:none!important}}
+
+/* Distinct launchable app icon identities */
+.app-icon.launchpad{background:linear-gradient(145deg,#8789ab,#465b91)}
+.app-icon.appstore{background:linear-gradient(145deg,#6acbfe,#3267de)}
+.app-icon.arcade{background:linear-gradient(145deg,#ad94f9,#6759c8)}
+.app-icon.tasks{background:linear-gradient(145deg,#ffcca1,#f17c7e)}
+.app-icon.focus{background:linear-gradient(145deg,#a4acff,#7765d5)}
+.app-icon.journal{background:linear-gradient(145deg,#fcb1cd,#e475ae)}
+.app-icon.codepad{background:linear-gradient(145deg,#7581a2,#282b4b)}
+.app-icon.atlas{background:linear-gradient(145deg,#6cddca,#3a96c3)}
+.app-icon.discover{background:linear-gradient(145deg,#9acaff,#5377e7)}
+.app-icon.pixel{background:linear-gradient(145deg,#e5b3f5,#9e74d9)}
+.app-icon.synth{background:linear-gradient(145deg,#ffb7d7,#ed6e98)}
+.app-icon.snake{background:linear-gradient(145deg,#9ce8c7,#34ab8b)}
+.app-icon.merge{background:linear-gradient(145deg,#ffd8a6,#f29c6a)}
+.app-icon.memory{background:linear-gradient(145deg,#d1c4f7,#9984e0)}
+.app-icon.mines{background:linear-gradient(145deg,#aab9d5,#697796)}
+.app-icon.habits{background:linear-gradient(145deg,#a9ebba,#49b99c)}
+.app-icon.flashcards{background:linear-gradient(145deg,#ffe8a5,#edb960)}
+.app-icon.recipes{background:linear-gradient(145deg,#ffbaaa,#ee806e)}
+.app-icon.typing{background:linear-gradient(145deg,#8399cb,#434b81)}
+.app-icon.sketch{background:linear-gradient(145deg,#b5e5f8,#82acdf)}
+#desktop-icons .app-icon.appstore{display:grid;place-items:center}
