@@ -1,6 +1,6 @@
 // Golden Gate OS v3 · offline shell for same-origin static assets
-const CACHE_NAME='golden-gate-os-v3-20261120-2';
-const ASSETS=['./','./index.html','./styles/main.css','./styles/experiences.css','./js/os.js','./js/experiences.js','./js/games.js','./manifest.webmanifest','./assets/favicon.svg'];
+const CACHE_NAME='golden-gate-os-v3-20261120-3';
+const ASSETS=['./','./index.html','./styles/main.css','./styles/experiences.css','./styles/updates.css','./js/os.js','./js/experiences.js','./js/games.js','./js/creative.js','./js/updates.js','./manifest.webmanifest','./assets/favicon.svg'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
