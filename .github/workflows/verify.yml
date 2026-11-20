@@ -1,0 +1,40 @@
+name: Verify Golden Gate OS
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JavaScript syntax
+        run: |
+          for file in js/*.js sw.js; do
+            echo "Checking $file"
+            node --check "$file"
+          done
+      - name: Verify static website
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          class Assets(HTMLParser):
+              def __init__(self): super().__init__(); self.paths=[]
+              def handle_starttag(self,tag,attrs):
+                  d=dict(attrs)
+                  if tag in ('script','link'):
+                      for k in ('src','href'):
+                          value=d.get(k,'')
+                          if value.startswith('./'): self.paths.append(value[2:])
+          p=Assets()
+          p.feed(Path('index.html').read_text())
+          paths=p.paths+['sw.js','manifest.webmanifest','js/arcade.js','js/puzzles.js','js/creative.js','js/experiences.js']
+          missing=[x for x in paths if not Path(x).is_file()]
+          if missing: raise SystemExit('Missing assets: '+str(missing))
+          root=Path('js/os.js').read_text()
+          assert 'window.GoldenOS=' in root and 'GoldenOSExtra' in root
+          app=Path('js/experiences.js').read_text()
+          assert 'storeView' in app and 'launchpadView' in app
+          print('Static assets and app hooks verified')
+          PY

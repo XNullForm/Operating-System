@@ -37,7 +37,7 @@ const catalog=[
 ];
 const meta=Object.fromEntries(catalog.map(([id,name,category,description,glyph,tone,icon])=>[id,{id,name,category,description,glyph,tone,icon}]));
 const permanent=['launchpad','appstore','arcade'];
-const initial=['tasks','focus','journal','codepad','atlas','discover','pixel','synth','snake','merge','memory','mines','habits','flashcards','recipes','typing','sketch'];
+const initial=['tasks','focus','journal','codepad','discover','pixel','snake','merge'];
 let installed=new Set(load('installedV3',initial));
 let category='All';
 let search='';
