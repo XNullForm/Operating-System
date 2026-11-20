@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#24354c">
+<meta name="description" content="Golden Gate OS - a browser-based desktop experience.">
+<meta name="theme-color" content="#24354c">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+<title>Golden Gate OS</title>
+<link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+<div id="desktop">
+ <div class="wallpaper" id="wallpaper"><svg id="scenery" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+ <linearGradient id="sky" x1="0" x2=".95" y1="0" y2="1"><stop offset="0" stop-color="#373c67"/><stop offset=".31" stop-color="#956f93"/><stop offset=".61" stop-color="#f2a08f"/><stop offset=".88" stop-color="#ffc7a0"/><stop offset="1" stop-color="#d69a9c"/></linearGradient>
+ <linearGradient id="water" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#d78d93"/><stop offset=".37" stop-color="#726b90"/><stop offset="1" stop-color="#283952"/></linearGradient>
+ <linearGradient id="hill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#765b76"/><stop offset="1" stop-color="#343b58"/></linearGradient>
+ <linearGradient id="deck" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#d27469"/><stop offset="1" stop-color="#783b52"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="33"/></filter>
+ <filter id="fog"><feGaussianBlur stdDeviation="12"/></filter>
+ </defs><rect width="1600" height="900" fill="url(#sky)"/><ellipse cx="1130" cy="437" rx="300" ry="100" fill="#ffddbf" opacity=".45" filter="url(#blur)"/><path d="M0 539 C160 510 260 535 410 513 S760 538 930 503 S1280 489 1600 520 L1600 900H0Z" fill="#b57d8c" opacity=".65"/><path d="M0 571 C100 498 210 483 303 516 S540 570 650 544 S872 480 978 510 S1170 563 1360 489 S1530 502 1600 498 L1600 900H0Z" fill="url(#hill)" opacity=".87"/><path d="M0 605 C120 550 235 568 377 585 S650 540 810 576 S1080 560 1200 552 S1450 581 1600 559 L1600 900H0Z" fill="#3c435e" opacity=".64"/>
+ <rect x="0" y="615" width="1600" height="285" fill="url(#water)"/><g opacity=".18" stroke="#ffd0aa" stroke-width="2"><path d="M0 659Q290 649 550 657T1060 656T1600 660"/><path d="M0 693Q330 678 570 689T1600 692"/><path d="M0 733Q250 724 630 738T1600 722"/><path d="M0 798Q350 781 780 801T1600 793"/></g>
+ <g opacity=".28" filter="url(#fog)"><path d="M0 583 Q500 575 900 590 T1600 591" stroke="#ffcbb9" stroke-width="30" fill="none"/></g>
+ <g id="bridge" opacity=".92" stroke-linejoin="round"><path d="M-40 588L1640 611 1640 628 -40 606Z" fill="url(#deck)"/><path d="M-40 602L1640 624" stroke="#62354c" stroke-width="8"/><path d="M-40 591L1640 613" stroke="#e99a7f" stroke-width="3"/><path d="M-40 615L1640 636" stroke="#553349" stroke-width="5"/>
+ <g stroke="#a9575a" stroke-width="1.8" fill="none" id="suspension-lines"></g><path d="M-40 425 Q120 295 292 255 Q615 660 920 246 Q1270 510 1640 331" stroke="#703d55" stroke-width="11" fill="none"/><path d="M-40 423 Q120 292 292 253 Q615 656 920 244 Q1270 504 1640 329" stroke="#eb8f7d" stroke-width="5" fill="none"/>
+ <g><path d="M257 238L330 238 344 653 243 653Z" fill="#a6535a"/><path d="M263 250L321 250 329 650 251 650Z" fill="#b55b5c"/><rect x="270" y="277" width="46" height="89" rx="2" fill="url(#sky)"/><rect x="268" y="398" width="52" height="94" rx="2" fill="url(#sky)"/><rect x="263" y="518" width="61" height="78" rx="2" fill="#806073"/><path d="M253 245L333 245M250 378L338 378M247 506L340 506" stroke="#e38b75" stroke-width="14"/></g>
+ <g><path d="M888 236L957 236 973 655 871 655Z" fill="#a7535b"/><path d="M896 249L950 249 958 650 885 650Z" fill="#b95d62"/><rect x="902" y="273" width="44" height="89" rx="2" fill="url(#sky)"/><rect x="895" y="395" width="54" height="97" rx="2" fill="url(#sky)"/><rect x="891" y="519" width="63" height="78" rx="2" fill="#a47782"/><path d="M881 245L966 245M878 378L967 378M874 505L970 505" stroke="#e18a76" stroke-width="14"/></g><path d="M-40 616L1640 637" stroke="#d97b70" stroke-width="2"/></g>
+ <path d="M0 802Q140 753 230 795T450 790T680 815T910 799T1170 812T1600 802V900H0Z" fill="#2b4053" opacity=".15"/>
+ </svg></div>
+ <div id="menu-bar"><div id="brand" role="button" tabindex="0" title="About Golden Gate OS"><span class="brandmark">G</span><span>Golden Gate</span></div><span class="menu-link" data-menucmd="finder">File</span><span class="menu-link" data-menucmd="notes">Edit</span><span class="menu-link" data-menucmd="settings">View</span><span class="menu-link" data-menucmd="spotlight">Go</span><span class="menu-link" data-menucmd="about">Help</span><div class="menu-spacer"></div><div id="status-tray"><button id="network-status" title="Connection status">◉</button><button id="spotlight-trigger" aria-label="Open search" title="Search (Ctrl/⌘+K)"></button><button id="control-trigger" title="Control Center" aria-label="Control Center"></button><button id="clock-tray" title="Open Calendar"></button></div></div>
+ <div id="desktop-greeting"><div class="greeting-kicker">A NEW PERSPECTIVE</div><h1>Golden Gate.</h1><div class="greeting-date" id="desktop-date">Your personal workspace</div></div>
+ <div id="desktop-icons"><div class="desktop-icon" data-desktop="finder" title="Open Files"><div class="app-icon finder" id="desktop-home-icon"></div><span>Home</span></div><div class="desktop-icon" data-desktop="notes" title="Open Notes"><div class="app-icon notes" id="desktop-note-icon"></div><span>Notes</span></div><div class="desktop-icon" data-desktop="trash" title="Open Trash"><div class="app-icon finder" id="desktop-trash-icon"></div><span>Trash</span></div></div>
+ <div id="window-layer"></div><div id="dock"></div>
+ <div id="spotlight-backdrop"><div id="spotlight"><div id="spotlight-search"></div><div id="spotlight-results"></div><div class="spotlight-footer"><span>↑ ↓ Navigate &nbsp; ↵ Open</span><span>ESC Close</span></div></div></div>
+ <div id="control-panel"></div><div id="context-menu"></div><div id="toast-stack"></div>
+ <div class="boot-overlay" id="boot"><div><div class="boot-logo">golden<span>gate.</span></div><div class="boot-sub">A NEW PERSPECTIVE</div></div></div>
+ <input type="file" id="system-file-input" hidden multiple>
+</div>
+<script src="./js/os.js" defer></script>
+</body>
+</html>
