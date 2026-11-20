@@ -1,5 +1,18 @@
-const CACHE='golden-gate-os-v3-liquidglass';
-const CORE=['./','./index.html','./styles/main.css','./styles/experiences.css','./js/os.js','./js/experiences.js','./js/puzzles.js','./js/arcade.js','./js/creative.js','./manifest.webmanifest','./assets/favicon.svg'];
-self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)));self.skipWaiting()});
-self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(names=>Promise.all(names.filter(n=>n!==CACHE&&n.startsWith('golden-gate')).map(n=>caches.delete(n)))).then(()=>self.clients.claim()))});
-self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET'||new URL(r.url).origin!==location.origin)return;e.respondWith(fetch(r).then(res=>{if(res.ok){let copy=res.clone();caches.open(CACHE).then(c=>c.put(r,copy)).catch(()=>{})}return res}).catch(()=>caches.match(r).then(x=>x||caches.match('./index.html'))))});
+// Golden Gate OS v3 · offline shell for same-origin static assets
+const CACHE_NAME='golden-gate-os-v3-20261120-2';
+const ASSETS=['./','./index.html','./styles/main.css','./styles/experiences.css','./js/os.js','./js/experiences.js','./js/games.js','./manifest.webmanifest','./assets/favicon.svg'];
+self.addEventListener('install',event=>{
+  event.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
+});
+self.addEventListener('activate',event=>{
+  event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('golden-gate-os-')&&k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));
+});
+self.addEventListener('fetch',event=>{
+  const request=event.request;
+  if(request.method!=='GET'||new URL(request.url).origin!==self.location.origin)return;
+  if(request.mode==='navigate'){
+    event.respondWith(fetch(request).then(r=>{if(r.ok){const c=r.clone();caches.open(CACHE_NAME).then(cache=>cache.put(request,c)).catch(()=>{})}return r}).catch(()=>caches.match(request).then(r=>r||caches.match('./index.html'))));
+    return;
+  }
+  event.respondWith(caches.match(request).then(cached=>cached||fetch(request).then(r=>{if(r.ok){const c=r.clone();caches.open(CACHE_NAME).then(cache=>cache.put(request,c)).catch(()=>{})}return r})));
+});
