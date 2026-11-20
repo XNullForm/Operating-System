@@ -1,31 +1,34 @@
-# Golden Gate OS 3.0 — Liquid Glass Edition
+# Golden Gate OS · Liquid Glass Edition 3.0
+An original browser-based desktop inspired by Golden Gate Bridge sunsets and modern translucent interface design. This is a web app, not a replacement operating system.
 
-Golden Gate OS is an original, interactive browser-based desktop environment. It is **a web app, not a replacement for macOS or Windows**.
+## Deploy with Cloudflare Pages
+Connect GitHub repository `XNullForm/Operating-System` to Cloudflare Pages using Git integration. Select the `main` branch, choose **None** for framework, leave build command blank, and set build output directory to `/`. Every commit to main triggers a new Pages build if automatic deployment is enabled.
 
-## What's new
+## What's inside
+- Window manager with movable windows, maximize/minimize, dock, spotlight, Control Center, Settings.
+- 12 classic desktop apps: Files, Horizon Browser (tabs, web preview and Wikipedia reader), Notes, Calendar, Terminal simulator, Calculator, Photos, Canvas, Weather, Clock, Music and Settings.
+- App Store: discover, install, launch, and remove browser-native mini apps.
+- Launchpad and Arcade with multiple playable games: Snake, 2048, Memory Match, Mines, Type Sprint.
+- Creative: Sound Studio sequencer, Pixel Studio with PNG exports, Code Lab with sandboxed HTML preview, and Idea Board.
+- Focus, Tasks, Journal, Habits, Flashcards, Discover, Atlas maps, Kitchen recipes.
+- Local data persistence, responsive layouts, mobile-friendly controls, offline application shell, PWA installability.
 
-- Liquid-glass windows, translucent dock, motion, desktop widgets, responsive layout
-- App Store with install/remove, app details, search and categories, plus Launchpad
-- Arcade with playable **Neon Snake, 2048, Memory Match, Mines and Type Sprint**
-- Creativity: **Pixel Studio** (draw, save PNG), **Sound Studio** (16-step synthesized melody), **Code Lab** (HTML/CSS/JS live sandbox preview), **Idea Board**
-- Productivity: Tasks, Focus timer, Journal, Habits, Flashcards, Kitchen
-- Discovery: **Atlas** with OpenStreetMap embeds, **Discover** cards connecting to Wikipedia via Horizon Browser
-- Existing apps: Files, Notes, Horizon Browser, Calendar, Terminal, Calculator, Photos, Canvas, Weather, Clock, Music, Settings, Activity Monitor, TextEdit
-- Offline cache for core app files; most personal data saved via browser localStorage
+## Important limitations
+Websites can refuse being embedded because of CSP and X-Frame-Options; the browser's Open External fallback lets users visit those pages normally. Horizon is not a replacement for a true browser engine. Weather and maps require connectivity. Most app data is stored in the browser's localStorage only, so clearing site data can erase it. Use the Settings data export for backup. Code Lab's preview is sandboxed, not a server-side execution environment.
 
-## Local usage
+## Development
+No dependencies. Run `python -m http.server 8000` and open http://localhost:8000/ to test the site. The service worker works on HTTPS and localhost; hard-refresh after updates if an older copy is cached.
 
-Serve the repository as a static website (for example, `python -m http.server 8000`), then open `http://localhost:8000`. Opening `index.html` directly may disable some browser features or service worker caching.
-
-## Cloudflare Pages
-
-Connect this GitHub repository to Cloudflare Pages and deploy branch `main`. Framework preset: **None**. Build command: **none**. Output directory: **/** (repository root). Each future push to `main` triggers a new deployment if Git integration is connected.
-
-## Notes and limits
-
-- Horizon Browser supports tabs, Wikipedia reading and previews of iframe-compatible sites. Many third-party websites explicitly prohibit embedding. Use **Open externally** to access those sites in the actual browser; no HTML page can bypass the restriction.
-- Atlas uses OpenStreetMap over the internet and Weather uses Open-Meteo. Offline use is limited to cached app code and local content.
-- App Store apps are included as website modules. Install/remove changes local app availability; it does not download third-party binaries.
-- The simulated Terminal does not execute real operating-system commands. Code Lab runs preview code in a sandboxed frame, separate from the OS.
-- Stored tasks, journal, notes, and other local data are device/browser-specific. Clearing site storage erases them. Use Settings backup/export where available.
-- This project is independently designed and inspired by modern translucent desktop interfaces; it is not affiliated with Apple.
+## Structure
+```
+index.html
+styles/main.css
+styles/experiences.css
+js/os.js
+js/experiences.js
+js/games.js
+assets/
+manifest.webmanifest
+sw.js
+```
+Golden Gate OS is an independent original project and is not affiliated with Apple.

@@ -11,6 +11,7 @@
 <title>Golden Gate OS</title>
 <link rel="stylesheet" href="./styles/main.css">
 <link rel="stylesheet" href="./styles/experiences.css">
+<link rel="stylesheet" href="./styles/experiences.css">
 </head>
 <body>
 <div id="desktop">
@@ -32,7 +33,7 @@
  </svg></div>
  <div id="menu-bar"><div id="brand" role="button" tabindex="0" title="About Golden Gate OS"><span class="brandmark">G</span><span>Golden Gate</span></div><span class="menu-link" data-menucmd="finder">File</span><span class="menu-link" data-menucmd="notes">Edit</span><span class="menu-link" data-menucmd="settings">View</span><span class="menu-link" data-menucmd="spotlight">Go</span><span class="menu-link" data-menucmd="about">Help</span><div class="menu-spacer"></div><div id="status-tray"><button id="network-status" title="Connection status">◉</button><button id="spotlight-trigger" aria-label="Open search" title="Search (Ctrl/⌘+K)"></button><button id="control-trigger" title="Control Center" aria-label="Control Center"></button><button id="clock-tray" title="Open Calendar"></button></div></div>
  <div id="desktop-greeting"><div class="greeting-kicker">A NEW PERSPECTIVE</div><h1>Golden Gate.</h1><div class="greeting-date" id="desktop-date">Your personal workspace</div></div>
- <div id="desktop-icons"><div class="desktop-icon" data-desktop="finder" title="Open Files"><div class="app-icon finder" id="desktop-home-icon"></div><span>Home</span></div><div class="desktop-icon" data-desktop="notes" title="Open Notes"><div class="app-icon notes" id="desktop-note-icon"></div><span>Notes</span></div><div class="desktop-icon" data-desktop="trash" title="Open Trash"><div class="app-icon finder" id="desktop-trash-icon"></div><span>Trash</span></div></div>
+ <div id="desktop-icons"><div class="desktop-icon" data-desktop="finder" title="Open Files"><div class="app-icon finder" id="desktop-home-icon"></div><span>Home</span></div><div class="desktop-icon" data-desktop="notes" title="Open Notes"><div class="app-icon notes" id="desktop-note-icon"></div><span>Notes</span></div><div class="desktop-icon" data-desktop="appstore" title="Open App Store"><div class="app-icon appstore"><span style="font-weight:900;font-size:21px">A</span></div><span>App Store</span></div><div class="desktop-icon" data-desktop="trash" title="Open Trash"><div class="app-icon finder" id="desktop-trash-icon"></div><span>Trash</span></div></div>
  <div id="window-layer"></div><div id="dock"></div>
  <div id="spotlight-backdrop"><div id="spotlight"><div id="spotlight-search"></div><div id="spotlight-results"></div><div class="spotlight-footer"><span>↑ ↓ Navigate &nbsp; ↵ Open</span><span>ESC Close</span></div></div></div>
  <div id="control-panel"></div><div id="context-menu"></div><div id="toast-stack"></div>
@@ -40,6 +41,8 @@
  <input type="file" id="system-file-input" hidden multiple>
 </div>
 <script src="./js/os.js" defer></script>
+<script src="./js/experiences.js" defer></script>
+<script src="./js/games.js" defer></script>
 <script src="./js/experiences.js" defer></script>
 <script src="./js/puzzles.js" defer></script>
 <script src="./js/arcade.js" defer></script>
